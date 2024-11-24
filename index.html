@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu Restaurante - Menú</title>
+    <!-- Enlaces a estilos y fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Enlace al archivo de estilos -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="pagina-menu">
+    <!-- Encabezado con navegación -->
+    <header class="header">
+        <img src="logo.png" alt="Logo de Chicken Crunchers">
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="menu.html">Menú</a>
+            <a href="#" id="dark-mode-toggle" aria-label="Cambiar entre modo claro y oscuro">
+                <i class="fas fa-moon"></i>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Contenedor principal con barra lateral y contenido -->
+    <div class="container">
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <h3>Categorías</h3>
+            <ul id="sidebar-menu">
+                <!-- Las familias y subfamilias se cargarán aquí dinámicamente -->
+            </ul>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <section id="letrasmenu" class="menu">
+                <h2>Nuestro Menú</h2>
+                <div id="menu-items" class="menu-items">
+                    <!-- Los artículos del menú se cargarán aquí dinámicamente -->
+                    <p>Por favor, seleccione una categoría para ver los artículos.</p>
+                </div>
+            </section>
+            <!-- Botón para añadir un nuevo artículo -->
+            <button id="add-article-btn">Añadir Nuevo Artículo</button>
+        </main>
+    </div>
+
+    <section>
+        <!-- Botón para realizar el pedido en Glovo -->
+        <p>Puedes hacer tu pedido a través de Glovo haciendo clic en el botón de abajo.</p>
+        <a href="https://glovoapp.com/es/en/costa-de-adeje/chicken-crunchers-costa-de-adeje/" target="_blank" class="boton-glovo">Pedir ahora en Glovo</a>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 Chicken Crunchers</p>
+        <p>Síguenos en:</p>
+        <a href="https://www.facebook.com/profile.php?id=61566740222272" target="_blank">
+            <img src="facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/chickencrunchers/" target="_blank">
+            <img src="instagram.png" alt="Instagram">
+        </a>
+        <a href="https://x.com/chickencunchers?s=21&t=tUd2LM4uxL0HQbIPGT7hJA" target="_blank">
+            <img src="x.png" alt="Twitter">
+        </a>
+    </footer>
+
+    <!-- Contenedor del formulario para añadir/editar artículos -->
+    <div id="article-form-container" class="form-container" style="display: none;">
+        <form id="article-form">
+            <h3 id="form-title">Añadir Nuevo Artículo</h3>
+            <input type="text" id="article-name" placeholder="Nombre del artículo" required>
+            <input type="text" id="article-ref" placeholder="Referencia" required>
+            <input type="number" id="article-price" placeholder="Precio" required step="0.01">
+            <input type="text" id="article-family" placeholder="Familia" required>
+            <input type="text" id="article-subfamily" placeholder="Subfamilia">
+            <!-- Cambiar el campo de imagen a texto -->
+            <input type="text" id="article-image" placeholder="Nombre de la imagen (ej: imagen.jpg)" required>
+            <button type="submit">Guardar</button>
+            <button type="button" id="cancel-btn">Cancelar</button>
+        </form>
+    </div>
+
+    <!-- Firebase App (el SDK central de Firebase) -->
+    <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-app-compat.js"></script>
+    <!-- Añade los productos de Firebase que quieras utilizar -->
+    <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore-compat.js"></script>
+    <!-- Tu script principal -->
+    <script src="script_menu.js"></script>
+</body>
+</html>
